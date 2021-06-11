@@ -64,8 +64,8 @@ namespace MyFirstConsoleApp
 
         static double addition()
         {
-            double num1 = numberInput1();
-            double num2 = numberInput2();
+            double num1 = numberInput();
+            double num2 = numberInput();
 
             double sum = num1 + num2;
 
@@ -77,8 +77,8 @@ namespace MyFirstConsoleApp
         static double subtraction()
         {
 
-            double num1 = numberInput1();
-            double num2 = numberInput2();
+            double num1 = numberInput();
+            double num2 = numberInput();
 
             double sum = num1 - num2;
             Console.WriteLine("\n\n" + num1 + "-" + num2 + " = " + sum + "\n\n");
@@ -87,8 +87,8 @@ namespace MyFirstConsoleApp
         }
         static double multiplication()
         {
-            double num1 = numberInput1();
-            double num2 = numberInput2();
+            double num1 = numberInput();
+            double num2 = numberInput();
 
             double sum = num1 * num2;
             Console.WriteLine("\n\n" + num1 + "*" + num2 + " = " + sum + "\n\n");
@@ -97,15 +97,15 @@ namespace MyFirstConsoleApp
 
         static double divison()
         {
-            double num1 = numberInput1();
-            double num2 = numberInput2();
+            double num1 = numberInput();
+            double num2 = numberInput();
             double sum = num1/num2;
 
              while(num2 == 0)
             {
                 Console.WriteLine("Sorry, you cant divide by 0!");
-                num1 = numberInput1();
-                num2 = numberInput2();
+                num1 = numberInput();
+                num2 = numberInput();
                sum = num1 / num2;
             }
             Console.WriteLine("\n\n" + num1 + "/" + num2 + " = " + sum + "\n\n");
@@ -129,46 +129,27 @@ namespace MyFirstConsoleApp
 
         }
 
-        static double numberInput1()
+        static double numberInput()
         {
            
                 Console.WriteLine("Enter First number:");
-                string userUserInputNum1 = Console.ReadLine();
-                double num1;
-                double.TryParse(userUserInputNum1, out num1);
+                string userUserInputNum = Console.ReadLine();
+                double num;
+                double.TryParse(userUserInputNum, out num);
 
-            while (!double.TryParse(userUserInputNum1, out num1))
+            while (!double.TryParse(userUserInputNum, out num))
             {
                 Console.WriteLine("Wrong input; try again");
-                userUserInputNum1 = Console.ReadLine();
+                userUserInputNum = Console.ReadLine();
 
-                double.TryParse(userUserInputNum1, out num1);
+                double.TryParse(userUserInputNum, out num);
 
             }
 
-            return num1;
+            return num;
          
         }
-        static double numberInput2()
-        {
-            
-            Console.WriteLine("Enter second number:");
-            string userUserInputNum2 = Console.ReadLine();
-            double num2;
-            double.TryParse(userUserInputNum2, out num2);
-
-            while (!double.TryParse(userUserInputNum2, out num2))
-            {
-                Console.WriteLine("Wrong input; try again");
-                userUserInputNum2 = Console.ReadLine();
-                
-                double.TryParse(userUserInputNum2, out num2);
-
-            }
-
-            return num2;
-
-        }
+  
     }
 
 }
