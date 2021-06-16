@@ -107,9 +107,10 @@ namespace MyFirstConsoleApp
                 Console.WriteLine("sorry cant divide by 0");
                 
                 num2 = numberInput();
-                sum = num1 / num2;
+                
             }
-            
+            sum = num1 / num2;
+
             Console.WriteLine("\n\n" + num1 + "/" + num2 + " = " + sum + "\n\n");
             return sum;
         }
