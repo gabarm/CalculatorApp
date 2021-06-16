@@ -28,20 +28,20 @@ namespace MyFirstConsoleApp
                 switch (userInput)
                 {
                     case 1:
-                        addition();
+                        Addition();
                         
                         break;
 
                     case 2:
-                        subtraction();
+                        Subtraction();
                         break;
 
                     case 3:
-                        multiplication();
+                        Multiplication();
                         break;
 
                     case 4:
-                        divison();
+                        Divison();
                         break;
 
                     case 0:
@@ -62,7 +62,7 @@ namespace MyFirstConsoleApp
            
         }
 
-        static double addition()
+        static double Addition()
         {
             double num1 = numberInput();
             double num2 = numberInput();
@@ -74,7 +74,7 @@ namespace MyFirstConsoleApp
             
         }
 
-        static double subtraction()
+        static double Subtraction()
         {
 
             double num1 = numberInput();
@@ -85,7 +85,7 @@ namespace MyFirstConsoleApp
             return 0;
 
         }
-        static double multiplication()
+        static double Multiplication()
         {
             double num1 = numberInput();
             double num2 = numberInput();
@@ -95,19 +95,21 @@ namespace MyFirstConsoleApp
             return 0;
         }
 
-        static double divison()
+        static double Divison()
         {
+           
             double num1 = numberInput();
             double num2 = numberInput();
-            double sum = num1/num2;
+            double sum = num1 / num2;
 
-             while(num2 == 0)
+            while (num2==0)
             {
-                Console.WriteLine("Sorry, you cant divide by 0!");
-                num1 = numberInput();
+                Console.WriteLine("sorry cant divide by 0");
+                
                 num2 = numberInput();
-               sum = num1 / num2;
+                sum = num1 / num2;
             }
+            
             Console.WriteLine("\n\n" + num1 + "/" + num2 + " = " + sum + "\n\n");
             return sum;
         }
@@ -117,7 +119,7 @@ namespace MyFirstConsoleApp
 
             int number;
             String inputFromUser = Console.ReadLine();
-            int.TryParse(inputFromUser, out number);
+            
 
             while (!int.TryParse(inputFromUser, out number))
             {
@@ -131,8 +133,8 @@ namespace MyFirstConsoleApp
 
         static double numberInput()
         {
-           
-                Console.WriteLine("Enter First number:");
+                
+                Console.WriteLine("Enter number:");
                 string userUserInputNum = Console.ReadLine();
                 double num;
                 double.TryParse(userUserInputNum, out num);
